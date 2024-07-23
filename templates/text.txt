@@ -1,0 +1,76 @@
+#session and retrieving data values
+            if "try1" in session:
+                try1 = session["try1"]
+            unit1 = 'x'
+            unit2 = 'n'
+            course = 'f'
+            conn = sqlite3.connect('question.db')
+            c = conn.cursor()
+
+            c.execute("""
+                                           SELECT * FROM selectq WHERE department = ? AND unit =?
+                                       """, (unit1, course))
+            z = c.fetchall()
+            c.execute("""
+                                           SELECT * FROM selectq WHERE department = ? AND unit =?
+                                       """, (unit2, course))
+
+            c.execute("""
+
+                                           SELECT * FROM radioq WHERE department = ? AND unit =?
+                                       """, (unit1, course))
+            c.execute("""
+                                    SELECT * FROM radioq WHERE department = ? AND unit =?
+                                       """, (unit2, course))
+
+            c.execute("""
+                                                 SELECT * FROM textq WHERE department = ? AND unit =?
+                                       """, (unit1, course))
+            c.execute("""
+                                                          SELECT * FROM textq WHERE department = ? AND unit =?
+                                       """, (unit2, course))
+
+            conn.commit()
+            conn.close()
+            #updating unsers
+                if form.updatetxt1():
+        conn = sqlite3.connect('answers.db')
+        c = conn.cursor()
+        c.execute("""
+                      INSERT INTO answer (q1, answ1, q2, answ2, q3, answ3)
+                      VALUES (?, ?, ?, ?, ?, ?)
+                  """, (x, answ1, s, answ2, t, answ3))
+        conn.commit()
+        conn.close()
+#updating
+conn = sqlite3.connect('question.db')
+ c = conn.cursor()
+
+        c.execute("""
+                          INSERT INTO selectq (name,  id, department, unit)
+                          VALUES (?, ?, ?, ?)
+                      """, (name, id, department, unit1))
+        c.execute("""
+                                  INSERT INTO selectq (name,  id,department, unit)
+                                  VALUES (?, ?, ?, ?)
+                              """, (name, id, department, unit2))
+        c.execute("""
+                                 INSERT INTO radioq (name,  id,department, unit)
+                                 VALUES (?, ?, ?, ?)
+                             """, (name, id, department, unit1))
+        c.execute("""
+                                         INSERT INTO radioq (name,  id,department, unit)
+                                         VALUES (?, ?, ?, ?)
+                                     """, (name, id, department, unit2))
+
+        c.execute("""
+                                 INSERT INTO textq (name,  id,department, unit)
+                                 VALUES (?, ?, ?, ?)
+                             """, (name, id, department, unit1))
+        c.execute("""
+                                         INSERT INTO textq (name,  id ,department , unit)
+                                         VALUES (?, ?, ?, ?)
+                                     """, (name, id, department, unit2))
+
+        conn.commit()
+        conn.close()

@@ -1,0 +1,103 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+<body>{% block content %}
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <label>Forms management</label>
+        <a class="nav-link" href="/reports">Reports</a>
+        <a class="nav-link" href="/lectures">Lectures</a>
+        <a class="nav-link" href="/students">Students</a>
+        <a class="nav-link" href="/courses">courses</a>
+    </ul>
+</nav>
+    </div>
+
+   <form method ="post" id = "form">
+       <div class="form" >
+
+       <div class="card">
+
+            {{ form.hidden_tag() }}
+          <h3 align="center"> {{ form.lectureunit.label }}
+           {{ form.lectureunit() }}</h3>
+           <ol>
+               <li>
+
+    <br>
+        {{form.textarea1.label }}
+    <br>
+           {{form.textarea1() }}
+
+                   </li>
+           <br>
+           <br>
+               <li>
+    <br>
+        {{form.textarea2.label }}
+    <br>
+                   {{form.textarea2() }}
+                   <br>
+                   {{ form.p.label }}
+                   {{ form.p() }}
+                   <br>
+    {{ form.p5.label }}
+                   {{ form.p5() }}
+    <br>
+                   {{ form.p6.label }}
+                   {{ form.p6() }}
+
+               </li>
+    <br>
+               <br>
+               <li>
+    <br>
+                   <br>
+                   {{ form.textarea3.label }}
+                   <br>
+                   {{ form.textarea3 () }}
+                   <br>
+    {{ form.p1.label }}
+                   {{ form.p1() }}
+    <br>
+    {{ form.p2.label }}
+                   {{ form.p2() }}
+    <br>
+    {{ form.p3.label }}
+                   {{ form.p3() }}
+
+    <br>
+    {{ form.p4.label }}
+                   {{ form.p4() }}
+                   {{sltq}}
+
+    <br>
+
+
+               </li>
+               <li>
+                   {{form.que4.label}}<br>{{form.que4()}}
+
+               </li>
+               <li>
+                   {{ form.que7.label}} <br> {{ form.que7()}}
+               </li>
+               <li>
+                   {{ form.que5. label}} <br> {{form.que5()}}<br>{{form.q5answ1.label}}{{form.q5answ1()}}<br>
+                   {{form.q5answ2.label}}{{form.q5answ2()}}<br>{{form.q5answ3.label}}{{form.q5answ3()}}<br>
+                   {{form.q5answ4.label}}{{form.q5answ4()}}<br>
+               </li>
+               <li>
+                   {{ form.que6.label}}<br>{{form.que6()}}<br>
+                   {{form.q6answ1.label}}{{form.q6answ1()}}<br>{{form.q6answ2.label}}{{form.q6answ2()}}<br>
+               </li>
+
+               </ol>
+           <input type="submit" value = "Save form" name="add" id="add" align="centre" class="btn btn-primary">
+
+       </div>
+       </div>
+    </form>
+</div>
+{% endblock %}
+</body>

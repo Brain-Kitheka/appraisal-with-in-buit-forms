@@ -1,0 +1,32 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+<body>{% block content %}
+<div class="body" align = center>
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" href="#">General Evaluation</a>
+        <a class="nav-link" href="#">Evaluate Lecture</a>
+        <a class="nav-link" href="#">Evaluate department</a>
+       <a class="nav-link" href="#">About</a>
+    </ul>
+</nav>
+    </div>
+ <h3>Ensure you follow through with the guidelines</h3>
+  <label for ="slt">Select Department</label>
+  <select id="slt">
+    <option >school of science</option>
+    <option>Business</option>
+    <option>Medicine</option>
+  </select>
+  <label for ="slt1">Select Lecturer</label>
+  <select id ="slt1">
+    <option >Doctor Kitheka</option>
+    <option>Mr Musungu</option>
+    <option>Mr Brain</option>
+  </select>
+    <input type="submit" value = "submit" name="evaluate" id="evaluate" align="centre">
+</div>
+{% endblock %}
+</body>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css" media="screen">
+        h2{
+            color: white;
+            text-align: center;
+            background-color: #121227;
+
+            }
+        .main {
+            width: 100%;
+            background-color: black;
+           }
+        .navbarr{
+              background-color: #121227;
+              margin-top: o%;
+              font-size: 24px;
+           }
+           .navbarr label{
+                    color: yellow;
+                    }
+           .guidelines{
+                 background-color: grey;
+                 }
+        .navbarr a{
+              text-decoration: none;
+              color: #fff;
+              font-size: 18px;
+              letter-spacing: 2px;
+              padding: 30px;
+              align: top;
+
+        }
+        .navbarr a:hover{
+          background-color: grey;
+           transition: 0.5s;
+           letter-spacing: 2px;
+          text-transform: uppercase;
+
+         }
+
+         .form{
+             background-color: grey;
+             align: left;
+             max-width: 700px;
+             text-align: left;
+             padding: 20px;
+             border: 2px solid black;
+             border-radius: 10px;
+             margin-left: 30%;
+             margin-top: 20%;
+             margin-right: auto;
+
+           }
+
+         .lpage{
+             background-color: grey;
+             font-size: 30px;
+             color: white;
+             align: center;
+             max-width: 700px;
+             text-align: left;
+             padding: 20px;
+             border: 2px solid black;
+             border-radius: 10px;
+             margin-left: 30%;
+             margin-top: 20%;
+             margin-right: auto;
+
+           }
+           .student{
+                              background-color: grey;
+                              }
+           .card{
+                   background-color: white;
+                   border: 1px solid black;
+                   padding: 10px;
+                   }
+
+           .body2 {
+                   background-color: grey;
+                  background-image: url("static/admin.jpeg");
+                   height: 100vh;
+                    margin-left: 0;
+                    margin-right: 0;
+                    margin-top: 0;
+                    color: white;
+
+              }
+           .body2 h3{
+                 align: center;
+                 color: orange;
+                 border: 2px solid black;
+                 }
+
+           .body2 label{
+                 align: center;
+                 color: black;
+
+            .lpage{
+
+
+
+                 }
+           .card{
+              background-color: grey;
+              font-size: 24px;
+
+           }
+
+       .body{
+             background-color: grey;
+             background-image: url("static/admin.jpeg");
+             height: 100vh;
+             margin-left: 0;
+             margin-right: 0;
+             color: white;
+
+             }
+             .login{
+             background-color: red;
+             height: 100vh;
+             margin-left: 0;
+             margin-right: 0;
+             color: white;
+
+             }
+             .student{
+             background-color: grey;
+             height: 100vh;
+             margin-left: 0;
+             margin-right: 0;
+             color: white;
+
+             }
+             .form1{
+             align: center;
+    </style>
+
+</head>
+<body>{% block content %}
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#">Admin</a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div id="navbarNav" class="collapse navbar-collapse">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    </div>
+<div class="body">
+    <h1>This is admin login page</h1>
+   <form method ="post" id = "form1">
+
+        <div class ="form-group" align="center">
+            <label for ="username" >Enter Username</label>
+            <br>
+            <input type="text" class="form-control" name="username" id="username" required/>
+            <br>
+             <label for ="password">password</label>
+            <br>
+            <input type="password" class="form-control" name="password" id="password" required/>
+            <br>
+            <input type ="submit" value="login" class="btn btn-primary">
+            <button type="button" class="btn btn-primary" id="homeb" onclick="window.location.href='/';">forgot password</button>
+        </div>
+    </form>
+</div>
+{% with messages = get_flashed_messages(with_categories=true)%}
+    {% if messages %}
+    {% for category, message in messages %}
+    {% if category == 'error'%}
+    <div class = "alert alert-danger alter_dismissable" fade show role="alert">
+      {{message}}
+      <button type="button" class="close" data-dismiss ="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div class = "alert alert-success alter_dismissable" fade show role="alert">
+      {{message}}
+      <button type="button" class="close" data-dismiss ="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {%endwith %}
+{% endblock %}
+</body>

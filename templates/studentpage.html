@@ -1,0 +1,38 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+<body>{% block content %}
+<div class="student">
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <label>Student home page</label>
+
+       <a class="nav-link" href="#">About</a>
+    </ul>
+</nav>
+    </div>
+ <div class="guidelines">
+     <form method="post">
+         {{name}}
+         <h3>Make sure you read the guidelines below before proceeding to evaluation</h3>
+         <ol type="i">
+             <li>The response you provide is submitted anonymous but be sure to be decent and sincere</li>
+             <li>You must evaluate every category before you receive exam card for the semester</li>
+             <li>All your response will be looked and acted upon</li>
+             <li>You cannot evaluate courses that you are not registered</li>
+             <li>If there is units not be shown please contact ICT team through bkitheka@kabarak.ac.ke</li>
+             <li> You can only evaluate lectures of the following subjects <input type="text" value= "{{g.user_data[0][3]}}" name="unit1" id="unit1" readonly>
+                 and <input type="text" value="{{g.user_data[0][4]}}" name="unit2"id="unit2" readonly>units for
+                 <input type="text" id = "course" value=" {{g.user_data[0][2]}}" name="course" readonly></li>
+
+         </ol>
+
+         <p></p>
+    <p><input type="submit" name="evaluate" value = "Proceed"  id="evaluate" align="centre"></p>
+     </form>
+ </div>
+
+
+</div>
+{% endblock %}
+</body>

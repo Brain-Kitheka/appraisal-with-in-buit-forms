@@ -1,0 +1,48 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+{% block content %}
+{% if name %}
+     <h1>Hello {{ name }}</h1>
+       <h1>HI {{ language}}</h1>
+      <h2>{{radio}}</h2>
+{% else %}
+ <br>
+ form
+{% endif %}
+<form method="POST">
+          {{ form.hidden_tag() }}
+           <ol>
+               <li>
+           {{ form.textarea0.label }}
+    <br>
+    {{ form.textarea0() }}
+    <br>
+
+                   </li>
+           <br>
+           <br>
+               <li>
+    {{ form.radio.label }}
+    <br>
+    {{ form.radio() }}
+    <br>
+
+               </li>
+    <br>
+               <br>
+               <li>
+    {{ form.language.label }}
+    <br>
+                   {{ form.language()}}
+    <br>
+
+
+    <br>
+
+    {{ form.submit() }}
+               </li>
+               </ol>
+       </div>
+       </div>
+
+    </form>
+{% endblock %}

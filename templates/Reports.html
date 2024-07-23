@@ -1,0 +1,111 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+<body>{% block content %}
+
+<div class="body">
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <label>Reports Management</label>
+        <a class="nav-link" href="/lectures">Lectures</a>
+        <a class="nav-link" href="/students">Students</a>
+        <a class="nav-link" href="/courses">Courses</a>
+       <a class="nav-link" href="/forms">Forms</a>
+    </ul>
+</nav>
+    </div>
+
+    <form method="post">
+        <p>Search for specific report</p>
+        <labe>Enter lecture username</labe>
+        <input type="text" name="lecturename" id="lecturename">
+        <label>Enter unit</label>
+        <input type="text" name="unitname" id="unitname">
+        <input type="submit" name="submit" id="name" value="Search">
+        <input type="submit" name="clear" id="clear" value="Clear all Reports" style="background: red;">
+
+     {% for answ in answ1 %}
+              {% with i=loop.index0 %}
+              {% with l=loop.index %}
+
+            <h2><i>Student {{ l }}</i></h2>
+            <div class="card">
+        {{answ1[i][0]}} {{answ1[i][2]}}
+            <ol>
+                <li>
+               <h3>{{ answ1[i][3] }}</h3>
+            {{ answ1 [i][4] }}
+                    </li>
+                <li>
+               <h3>{{ answ1[i][5] }}</h3>
+            {{ answ1[i][6] }}
+                    </li>
+                <li>
+                 <h3>{{ answ1[i][7] }}</h3>
+            {{ answ1[i][8] }}
+                </li>
+                  <li>
+                 <h3>{{ answ1[i][9] }}</h3>
+            {{ answ1[i][10] }}
+                </li>
+                  <li>
+                 <h3>{{ answ1[i][11] }}</h3>
+            {{ answ1[i][12] }}
+                </li>
+                  <li>
+                 <h3>{{ answ1[i][13] }}</h3>
+            {{ answ1[i][14] }}
+                </li>
+                  <li>
+                 <h3>{{ answ1[i][15] }}</h3>
+            {{ answ1[i][16] }}
+                </li>
+            </ol></div>
+        <div class="card">
+            {{answ1[i][17]}} {{answ1[i][19]}}
+            <ol>
+                <li>
+               <h3>{{ answ1[i][20] }}</h3>
+            {{ answ1 [i][21] }}
+                    </li>
+                <li>
+               <h3>{{ answ1[i][22] }}</h3>
+            {{ answ1[i][23] }}
+                    </li>
+                <li>
+                 <h3>{{ answ1[i][24] }}</h3>
+            {{ answ1[i][25] }}
+                </li>
+                  <li>
+                 <h3>{{ answ1[i][26] }}</h3>
+            {{ answ1[i][27] }}
+                </li>
+                  <li>
+                 <h3>{{ answ1[i][28] }}</h3>
+            {{ answ1[i][29] }}
+                </li>
+                  <li>
+                 <h3>{{ answ1[i][30] }}</h3>
+            {{ answ1[i][31] }}
+                </li>
+                  <li>
+                 <h3>{{ answ1[i][32] }}</h3>
+            {{ answ1[i][33] }}
+                </li>
+                </ol>
+            </div>
+        {% endwith %}
+            {% endwith %}
+            {% endfor %}
+
+
+
+
+
+</form>
+</div>
+
+
+
+{% endblock %}
+</body>

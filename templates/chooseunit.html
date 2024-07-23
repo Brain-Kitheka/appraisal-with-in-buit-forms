@@ -1,0 +1,29 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+<body>{% block content %}
+<div class="student">
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <label>Lecture Evaluation</label>
+        <a class="nav-link" href="/home">Home</a>
+        <a class="nav-link" href="/general">General Evaluation</a>
+        <a class="nav-link" href="/department">Evaluate department</a>
+       <a class="nav-link" href="#">About</a>
+    </ul>
+</nav>
+    </div>
+ <h3>Ensure you follow through with the guidelines</h3>
+    <h1>{{ x }}</h1>
+<form method="POST">
+    {{name}}
+         <p></p>
+    <p><input type ="submit" name="chooseunit" value="Proceed" id="chooseunit"
+                                                  class="btn btn-primary"></p>
+    {{g}}
+    </form>
+       </div>
+
+
+{% endblock %}
+</body>

@@ -1,0 +1,60 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+<body>{% block content %}
+<div class="body">
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <label>Courses Management</label>
+        <a class="nav-link" href="/reports">Reports</a>
+        <a class="nav-link" href="/lectures">Lectures</a>
+        <a class="nav-link" href="/students">Students</a>
+       <a class="nav-link" href="/forms">Forms</a>
+    </ul>
+</nav>
+    </div>
+
+    <h1>This is admin login page</h1>
+   <form method ="post" id = "form">
+     <div class="table">
+        <table border="2">
+          <tr>
+            <td>unit name  </td>
+             <td>Unit ID</td>
+
+          </tr>
+           <tr >
+            </tr>
+            {% for lecture in k %}
+              {% with i=loop.index0 %}
+           <tr>
+
+            <td >{{ k[i][0] }}</td>
+            <td>{{ k[i][3] }}</td>
+
+          </tr>
+            {% endwith %}
+            {% endfor %}
+
+        {{ form.hidden_tag() }}
+
+        </tr>
+            <tr ><td colspan="3" align="center">Register new unit</td></tr>
+            <tr>
+            <td>{{form.p5()}}</td>
+            <td>
+             {{form.p4()}}
+
+            </td>
+            </tr>
+
+          <tr>
+            <td colspan="2" align="center"><input type ="submit" name="register" value="Submit" id="register"
+                                                  class="btn btn-primary"></td>
+          </tr>
+        </table>
+        </div>
+    </form>
+</div>
+{% endblock %}
+</body>

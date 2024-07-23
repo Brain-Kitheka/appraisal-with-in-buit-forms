@@ -1,0 +1,95 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+<body>{% block content %}
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <label>Final reports</label>
+       <a class="nav-link" href="#">About</a>
+    </ul>
+</nav>
+
+    </div>
+<form form="post">
+    <div class="card">
+        <br>
+
+        <h3><b style="color:orange;">Lecture:</b> {{username}}&emsp; <b style="color:orange;">Unit Code:</b>   {{l[0][3]}}
+            &emsp;<b style="color:orange;">Unit Name:</b>  {{l[0][0]}}</h3> <hr>
+    <ol><li>
+       <p> {{ l[0][4] }}
+        <br>
+           &emsp;{{ l[0][5] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{a1[0][0]}})</b>  <br>
+           &emsp;{{ l[0][6] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{a1[0][1]}})</b><br>
+           &emsp;{{ l[0][7] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{a1[0][2]}})</b><br>
+           &emsp;{{ l[0][8] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{a1[0][3]}})</b></p>
+        </li>
+    <br><li>
+           <p > {{ j[0][4] }}<br>
+               &emsp;{{ j[0][5] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{a2[0][0]}})</b><br>
+               &emsp;{{ j[0][6] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{a2[0][1]}})</b><br>
+               &emsp;{{ j[0][7] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{a2[0][2]}})</b></p>
+        </li><br>
+        <li>
+           <p > {{ x[0][1] }}<br>
+               &emsp;{{ x[0][2] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{q5[0][0]}})</b><br>
+               &emsp;{{ x[0][3] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{q5[0][1]}})</b><br>
+               &emsp;{{ x[0][4] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{q5[0][2]}})</b><br>
+                &emsp;{{ x[0][5] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{q5[0][3]}})</b></p>
+        </li>
+        <br>
+
+          <li>
+           <p > {{ t[0][1] }}<br>
+               &emsp;{{ t[0][2] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{q6[0][0]}})</b><br>
+               &emsp;{{ t[0][3] }}&emsp;<i style="color: blue;">Total responses </i><b style="color: red;">({{q6[0][1]}})</b></p>
+        </li>
+        </ol>
+        <br>
+        </div>
+    {% for answ in answ1 %}
+              {% with i=loop.index0 %}
+              {% with l=loop.index %}
+
+            <h2><i>Student {{ l }}</i></h2>
+            <div class="card">
+        {{answ1[i][0]}} {{answ1[i][2]}}
+            <ol>
+                <li>
+               <h3>{{ answ1[i][3] }}</h3>
+            {{ answ1 [i][4] }}
+                    </li>
+                <li>
+               <h3>{{ answ1[i][5] }}</h3>
+            {{ answ1[i][6] }}
+                    </li>
+                <li>
+                 <h3>{{ answ1[i][7] }}</h3>
+            {{ answ1[i][8] }}
+                </li>
+                 <li>
+                 <h3>{{ answ1[i][9] }}</h3>
+            {{ answ1[i][10] }}
+                </li>
+                 <li>
+                 <h3>{{ answ1[i][11] }}</h3>
+            {{ answ1[i][12] }}
+                </li>
+                 <li>
+                 <h3>{{ answ1[i][13] }}</h3>
+            {{ answ1[i][14] }}
+                </li>
+                 <li>
+                 <h3>{{ answ1[i][15] }}</h3>
+            {{ answ1[i][16] }}
+                </li>
+            </ol></div>
+            {% endwith %}
+            {% endwith %}
+            {% endfor %}
+</form>
+
+
+{{k}}
+{% endblock %}
+</body>

@@ -1,0 +1,57 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+<body>{% block content %}
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <a class="nav-link" href="#">Reports</a>
+        <a class="nav-link" href="#">Lectures</a>
+        <a class="nav-link" href="#">Students</a>
+        <a class="nav-link" href="#">courses</a>
+       <a class="nav-link" href="#">About Page</a>
+    </ul>
+</nav>
+    </div>
+
+    <h1>This is admin login page</h1>
+   <form method ="post" id = "form">
+       <div class="form" align="center">
+     <div class="card" align="center">
+         <h4>Choose department to evaluate</h4>
+         <select>
+             <option>Science Engineering and Technology</option>
+             <option>Health Science</option>
+             <option>Business and Economics</option>
+             <option>Theology</option>
+         </select>
+     </div>
+     <div class="card" align="center">
+         <h4>Are you student from the department</h4>
+         <input type="radio" value="yes" name="yes" id="yes"><label for = "yes">Yes</label>
+         <input type="radio" value="no" name="no" id="no"><label for = "no">No</label>
+         <input type="radio" value="nob" name="nob" id="nob"><label for = "nob">No but I have unit from the department</label>
+     </div>
+        <div class="card" align="center">
+         <h4>How are satisfied with services they offered in scale of 1-10</h4>
+            <label for = "number1">With 10 being very satisfied and 1 being not satisfied</label>
+         <input type="number"  name="number1" id="number1" max="10", min="1">
+     </div>
+
+     <div class="card" align="center">
+         <h4>What was your issue</h4>
+         <input type="radio" value="issue1" name="issue1" id="issue1"><label for = "issue1">Missing Mark</label>
+         <input type="radio" value="issue2" name="issue2" id="issue2"><label for = "issue2">Inquiries</label>
+         <input type="radio" value="issue3" name="nob" id="issue3"><label for = "issue3">Personal issue</label>
+         <h4>Was your issue solved</h4>
+         <input type="radio" value="sol1" name="sol1" id="sol1"><label for = "sol1">Yes</label>
+         <input type="radio" value="sol2" name="sol2" id="sol2"><label for = "sol2">No</label>
+         <input type="radio" value="sol3" name="sol3" id="sol3"><label for = "sol3">Yes, partially</label>
+         <h4>Describe your issue</h4>
+         <textarea placeholder="Describe your issue here"></textarea>
+     </div>
+
+       </div>
+    </form>
+</div>
+{% endblock %}
+</body>

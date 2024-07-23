@@ -1,0 +1,66 @@
+{% extends "base.html"%} {% block title%}this is home{% endblock %}
+<body>{% block content %}
+<div class="body">
+<div class="main">
+    <nav class="navbarr">
+  <a class="navbar-brand" href="#"></a>
+    <ul class="navbar-nav">
+        <label>Students Management</label>
+        <a class="nav-link" href="/reports">Reports</a>
+        <a class="nav-link" href="/lectures">Lectures</a>
+        <a class="nav-link" href="/courses">courses</a>
+       <a class="nav-link" href="/forms">Forms</a>
+    </ul>
+</nav>
+    </div>
+
+   <form method ="post" id = "form">
+     <table border="2" align="center" style="width: 200vh">
+          <tr>
+              <th colspan="4" bgcolor="grey"><h3>Students List</h3></th>
+              <tr/>
+            <tr>
+            <td>Student name</td>
+            <td>Student ID</td>
+            <td>School</td>
+            <td >Units</td>
+
+          </tr>
+            {% for student in students %}
+              {% with i=loop.index0 %}
+           <tr>
+
+            <td >{{ students[i][0] }}</td>
+            <td>{{ students[i][1] }}</td>
+            <td>{{ students[i][2] }}</td>
+            <td>{{ students[i][3]}} {{students[i][4]}} </td>
+
+          </tr>
+            {% endwith %}
+            {% endfor %}
+
+             <tr>
+                 <td colspan="4" bgcolor="grey"><H3 align="center">Register new Student</H3></td>
+             </tr>
+
+             <tr>
+                 <td>{{ form.p() }}</td>
+                 <td>{{ form.p1() }}</td>
+                 <td>{{ form.p3() }}</td>
+                 <td>{{ form.p6() }}{{ form.p4() }}<input type="submit" value = "Add" name="add" id="add" align="centre"></td>
+                 <td></td>
+             </tr>
+             <tr>
+                 <td colspan="4" bgcolor="grey"><H3 align="center">Remove Student</H3></td>
+             </tr>
+            <tr >
+                <td colspan="3" align="center"> Enter student ID <input type="text" name="sid" id="sid"></td>
+                <td align="center" ><input type="submit" value = "Remove" name="remove" id="remove" align="centre"></td>
+            </tr>
+     </table>
+       </form>
+        </div>
+
+</div>
+{% endblock %}
+</body>
